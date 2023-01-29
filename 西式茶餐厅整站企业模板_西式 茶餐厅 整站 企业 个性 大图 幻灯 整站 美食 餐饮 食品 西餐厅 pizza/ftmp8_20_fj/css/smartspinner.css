@@ -1,0 +1,23 @@
+﻿.smartspinner
+{
+	border-left:solid 1px #afafaf;
+	border-top:solid 1px #afafaf;
+	background: url(../images/normal.jpg) no-repeat 79px 0;
+	background-color:#fbdca0;
+	line-height:2;
+	border-radius:5px;
+	color:#3c3c3c;
+	padding:0 0 0 23px;
+}
+.smartspinner.up
+{
+	background: url(../images/up.jpg) no-repeat 79px 0;
+	background-color:#fbdca0;
+	cursor:pointer;
+}
+.smartspinner.down
+{
+	background: url(../images/down.jpg) no-repeat 79px 0;
+	background-color:#fbdca0;
+	cursor:pointer;
+}

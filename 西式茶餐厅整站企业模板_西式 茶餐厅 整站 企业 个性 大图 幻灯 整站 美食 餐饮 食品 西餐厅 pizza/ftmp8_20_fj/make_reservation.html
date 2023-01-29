@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Grab Tasty &amp; Quality - Make a Reservation</title>
+<link type="text/css" rel="stylesheet" href="css/style.css" />
+<link type="text/css" rel="stylesheet" href="css/smartspinner.css" />
+<link href="css/thickbox.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="scripts/jquery.js"></script>
+<script type="text/javascript" src="scripts/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="scripts/thickbox.js"></script>
+<script type="text/javascript" src="scripts/scripts.js"></script>
+<script type="text/javascript" src="scripts/smartspinner.js"></script>
+<script>
+$(document).ready(function() {
+	var s = $('#red').spinit({ height: 40, width: 87, min: 0, initValue: 1, max: 255, callback: onred, mask: 'Hour', callback: onred });
+	$('#green').spinit({ height: 40, width: 87, min: 0, initValue: 1, max: 255, callback: onred, mask: 'Minutes', callback: ongreen });
+	$('#blue').spinit({ height: 30, width: 100, min: 0, initValue: 40, max: 255, callback: onred, mask: 'Blue', callback: onblue });
+
+
+	var r = 40, g = 40, b = 40;
+	function onred(val) {
+		r = val;
+		changeColor();
+	}
+	function ongreen(val) {
+		g = val;
+		changeColor();
+	}
+	function onblue(val) {
+		b = val;
+		changeColor();
+	}
+	function byte2Hex(n) {
+		var nybHexString = "0123456789ABCDEF";
+		return String(nybHexString.substr((n >> 4) & 0x0F, 1)) + nybHexString.substr(n & 0x0F, 1);
+	}
+	function RGB2Color(r, g, b) {
+		return '#' + byte2Hex(r) + byte2Hex(g) + byte2Hex(b);
+	}
+
+	function changeColor() {
+		var color = RGB2Color(r, g, b);
+	}
+
+});
+</script>
+</head>
+<body>
+	<header>
+		<div class="header_main">
+			<div class="logo lft">
+				<figure><a href="index.html"><img src="images/logo_text.png" width="213" height="105" alt="Grab Tasty &amp; Quality" title="Grab Tasty &amp; Quality" /></a></figure>
+			</div>
+			<div class="header_rgt rgt">
+				<div class="makereservation rgt"><h5><a href="make_reservation.html">Make a<br />Reservation</a></h5></div>
+				<nav>
+					<ul id="navmenu-h">
+						<li><a href="pizza.html">Pizza</a>
+							<ul>
+								<li><a href="#">Clam Pizza</a></li>
+								<li><a href="#">Stromboli</a></li>
+								<li><a href="#">Speciality</a></li>
+								<li><a href="#">Lunch Special</a></li>
+								<li><a href="#">Pizzas</a></li>
+								<li><a href="#">Lunch Special</a></li>
+								<li><a href="#">Pizzas</a></li>
+							</ul>
+						</li>
+						<li><a href="appetizers.html">Appetizers</a>
+							<ul>
+								<li><a href="#">Appetizers</a></li>
+								<li><a href="#">Hot Subs</a></li>
+							</ul>
+						</li>
+						<li><a href="special.html">Specials</a>
+							<ul>
+								<li><a href="#">Special</a></li>
+								<li><a href="#">Hot Subs</a></li>
+							</ul>
+						</li>
+						<li><a href="blog.html">Blog</a>
+							<ul>
+								<li><a href="blogv2.html">Blog V2</a></li>
+								<li><a href="blog_details.html">Blog Details</a></li>
+							</ul>
+						</li>
+						<li><a href="about_us.html">About Us</a></li>
+						<li><a href="contact.html">Contact Us</a></li>
+					</ul>
+				</nav>
+			</div><div class="clear"></div>
+		</div>
+	</header>
+
+	<section>
+		<div class="mid_container1">
+			<div class="bannerbg">
+				<div><img src="images/reservation_banner.jpg" width="980" height="180" alt="" /></div>
+				<div class="banner_pattern">Reservation</div>
+			</div>
+			<div class="reservation_main">
+				<div class="reservation_lft lft">
+					<div class="reservation_header lft">Step - 1<br /><span>Choose your date for reservation</span></div>
+					<div class="calendar lft">
+						<div class="cal_btn lft"><a href="#"><img src="images/prev_month.png" width="35" height="35" alt="" /></a></div>
+						<div class="month lft">April</div>
+						<div class="cal_btn lft"><a href="#"><img src="images/next_month.png" width="35" height="35" alt="" /></a></div>
+						<ul class="day lft">
+							<li>Mo</li>
+							<li>Tu</li>
+							<li>We</li>
+							<li>Th</li>
+							<li>Fr</li>
+							<li>Sa</li>
+							<li>Su</li>
+						</ul>
+						<ul class="date lft">
+							<li class="prvmonth">26</li>
+							<li class="prvmonth">27</li>
+							<li class="prvmonth">28</li>
+							<li class="prvmonth">29</li>
+							<li class="prvmonth">30</li>
+							<li class="prvmonth">31</li>
+							<li class="curmonth">1</li>
+
+							<li class="curmonth">2</li>
+							<li class="curmonth">3</li>
+							<li class="curmonth">4</li>
+							<li class="curmonth">5</li>
+							<li class="curmonth">6</li>
+							<li class="curmonth">7</li>
+							<li class="curmonth">8</li>
+
+							<li class="curmonth">9</li>
+							<li class="curmonth">10</li>
+							<li class="curmonth">11</li>
+							<li class="curmonth">12</li>
+							<li class="curmonth">13</li>
+							<li class="curmonth">14</li>
+							<li class="curmonth">15</li>
+
+							<li class="reserved">16</li>
+							<li class="curmonth">17</li>
+							<li class="curmonth">18</li>
+							<li class="curmonth">19</li>
+							<li class="reserved">20</li>
+							<li class="curmonth">21</li>
+							<li class="curmonth">22</li>
+
+							<li class="curmonth">23</li>
+							<li class="curmonth">24</li>
+							<li class="reserved">25</li>
+							<li class="curmonth">26</li>
+							<li class="curmonth">27</li>
+							<li class="curmonth">28</li>
+							<li class="reserved">29</li>
+
+							<li class="last not_available">30</li>
+							<li class="last prvmonth">1</li>
+							<li class="last prvmonth">2</li>
+							<li class="last prvmonth">3</li>
+							<li class="last prvmonth">4</li>
+							<li class="last prvmonth">5</li>
+							<li class="last prvmonth">6</li>
+						</ul>
+					</div>
+					<div class="legend lft">
+						<span>Legend :</span>
+						<ul>
+							<li class="available">Reservation Space Available</li>
+							<li class="hold">Some Reservations Space Available</li>
+							<li class="not_available">Reservations not Available</li>
+						</ul>
+					</div>
+				</div>
+				<div class="reservation_lft rgt">
+					<div class="reservation_header lft">Step - 2<br /><span>Specify exact time and Other information for your reservation</span></div>
+					<ul class="reservation">
+						<li class="lft"><label>Date</label><br /><input type="text" id="date" value="DD/MM/YY" class="txtbox1" /></li>
+						<li class="time lft"><label>Time</label><br /><input type="text" id="red" class="smartspinner" /></li>
+						<li class="time lft"><label>&nbsp;</label><br /><input type="text" id="green" class="smartspinner" /></li>
+						<li class="lft"><label>Name</label><br /><input type="text" id="name" class="txtboxbig" /></li>
+						<li class="lft"><label>Phone</label><br /><input type="text" id="phone" class="txtboxbig" /></li>
+						<li class="lft"><label>Email</label><br /><input type="text" id="email" class="txtboxbig" /></li>
+						<li class="lft"><label>Notes</label><br /><textarea id="noted" class="textareabig"></textarea></li>
+						<li class="rgt"><input type="submit" value="Send Reservation" class="submit_btn" /></li>
+					</ul>
+				</div><div class="clear"></div>
+			</div>
+			<div class="terms">
+				Terms and Conditions for Reservation<br /><span>Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour or randomised words.</span>
+			</div>
+		</div>
+	</section>
+
+	<footer>
+		<div class="footer_ins">
+			<div class="fbox1 lft">
+				<span class="box_hd lft">About Grab - Tasty &amp; Quality</span><div class="clear"></div>
+				<p>Lorem Ipsum available, but the majority have sufered alteration in some form, by injected humour.</p>
+				<p class="readmorelink"><a href="#" class="readmr" title="Read More...">Read More...</a></p>
+				<p class="speard_hd"><span class="box_hd">Speard the Word</span></p>
+				<ul class="share">
+					<li><a href="#"><img src="images/tweet_icon.png" width="108" height="30" alt="" /></a></li>
+					<li><a href="#"><img src="images/fb_share_icon.png" width="88" height="30" alt="" /></a></li>
+				</ul>
+			</div>
+			<div class="fbox2 lft">
+				<span class="box_hd lft">Quick Links</span><div class="clear"></div>
+				<div>
+					<ul class="links lft">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="pizza.html">Pizza</a></li>
+						<li><a href="appetizers.html">Appetizers</a></li>
+						<li><a href="special.html">Specials</a></li>
+						<li><a href="blog.html">Blog</a></li>
+						<li><a href="about_us.html">About Us</a></li>
+					</ul>
+					<ul class="links rgt">
+						<li><a href="contact.html">Contact Us</a></li>
+					</ul><div class="clear"></div>
+				</div>
+				<p><span class="box_hd">We Accept</span></p>
+				<ul class="share">
+					<li><img src="images/paypal_icon.png" width="51" height="32" alt="" /></li>
+					<li><img src="images/visa_icon.png" width="51" height="32" alt="" /></li>
+					<li><img src="images/maestro_icon.png" width="52" height="32" alt="" /></li>
+					<li><img src="images/amercion_icon.png" width="51" height="32" alt="" /></li>
+				</ul>
+			</div>
+			<div class="fbox3 lft">
+				<span class="box_hd lft">Our Location</span><div class="clear"></div>
+				<p class="mapimg"><a href="map.html@keepThis=true&TB_iframe=true&width=600&height=450" class="thickbox"><img src="images/map.jpg" width="199" height="70" alt="" /></a></p>
+				<p class="address">Grab - Tasty and Quality<br />1234 N. Federal Highway,<br />New York, NY 33431</p>
+				<p class="opening-hrs"><span class="box_hd">Opening Hours</span></p>
+				<p class="timing">Monday to Friday:	11:00 AM - 10:00 PM<br />Saturday &amp; Sunday:   11:30 AM - 11:30 PM</p>
+			</div>
+		</div>
+	</footer>
+
+	<div class="wrapper copyright_main">
+		<div class="copyright">Copyright &copy; 2014.Company name All rights reserved.<a target="_blank" href="http://www.moobnn.com/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a> - More Templates <a href="http://www.moobnn.com/" target="_blank" title="模板在线">模板在线</a> <a href="http://guantaow.taobao.com" target="_blank">厚朴网络 淘宝店</a> </div>
+	</div>
+
+</body>
+</html>
